@@ -89,6 +89,7 @@ OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
      * 自動回應訊息：使按鈕關閉（呈現灰色）
 ## STEP 7: 開始對話！
 使用手機掃描 Messaging API > QR code 的ＱＲ圖碼，現在即可進行對話啦！
+![LINE-OA-demo.png](https://github.com/hank199599/openGPT-with-Dialogflow/raw/main/img/LINE-OA-demo.png)
 
 # Q&A
 Q: 為何GPT CHAT給我的回應都很短？  
