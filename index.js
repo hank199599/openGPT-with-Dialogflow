@@ -15,7 +15,8 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
-var re = new RegExp("。.+");
+const suggestionList= ["你是誰創造的?","你會反抗人類嗎?","介紹GDG","介紹LINE這家公司","用Python倒數10秒鐘","你聽過賈伯斯嗎？","介紹台北的特色","簡單介紹你是誰","你認識馬斯克嗎?","你會取代人類嗎?","一句話介紹台灣","介紹Google"]
+
 
 exports.chatGPT = functions.https.onRequest((request, response) => {
 
@@ -64,7 +65,15 @@ exports.chatGPT = functions.https.onRequest((request, response) => {
       }).then( (returnedMessage )=>{
         console.log("input message:"+ request.body.queryResult.queryText)
         console.log("return message:"+returnedMessage)
+
+        const shuffled = suggestionList.sort(() => 0.5 - Math.random()).slice(0, 3);
+
         agent.add(returnedMessage);
+        
+        for(let i=0;i<shuffled.length;i++){
+          agent.add(new Suggestion(shuffled[i]))
+        }
+
       })
       .catch(( err )=>{
         console.log(err)
@@ -77,7 +86,9 @@ exports.chatGPT = functions.https.onRequest((request, response) => {
   // Run the proper function handler based on the matched Dialogflow intent name
   let intentMap = new Map();
   intentMap.set('Input Intent', welcome);
-  intentMap.set('Default Fallback Intent', welcome);
+  intentMap.set('Input Intent-1', welcome);
+  intentMap.set('Input Intent-2', welcome);
+  intentMap.set('Input Intent-3', welcome);
 
   agent.handleRequest(intentMap);
 });
