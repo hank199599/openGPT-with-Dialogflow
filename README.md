@@ -20,8 +20,7 @@ OPENAI_API_KEY=
 ```
 3. 把方才申請到的參數填入，如下所示
 ```
-OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-"
+OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 4. 儲存更改後的檔案，並以ZIP形式包裝。重新命名為`function.zip`
 
@@ -31,10 +30,11 @@ OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   3. 於該專案內，前往[Cloud Function](https://console.cloud.google.com/functions/list?authuser=0&hl=zh)頁面
   4. 建立新的Cloud Function  
      1. 點擊『創建函式』
-     2. 基本 > 環境 > 選擇『`第2代`』
-     3. 選擇『下一步』
-     4. `進入點` 更改為 `chatGPT`
-     5. `原始碼` 更改為 `上傳ZIP檔`，並上傳剛剛建立的`function.zip`
+     2. 基本 > 環境 > 選擇『`第1代`』
+     3. 觸發條件 > 驗證 > 選擇「`允許未經驗證的叫用`」
+     1. 選擇『下一步』
+     2. `進入點` 更改為 `chatGPT`
+     3. `原始碼` 更改為 `上傳ZIP檔`，並上傳剛剛建立的`function.zip`
   5. 等待部署完成後，點擊畫面中的「觸發條件」。複製在畫面中的「`觸發網址`」
   e.g. `https://us-central1-<PROJECT-ID>.cloudfunctions.net/chatGPT`
 
