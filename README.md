@@ -1,5 +1,5 @@
 # openGPT-with-Dialogflow
-an project to intergrade OpenAI ChatGPT API to Dialogflow ES
+a project to intergrade OpenAI ChatGPT API to Dialogflow ES
 
 ### 系統架構圖
 ![img/System%20architecture.png](https://github.com/hank199599/openGPT-with-Dialogflow/raw/main/img/System%20architecture.png)
